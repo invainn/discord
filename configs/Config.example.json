@@ -1,4 +1,7 @@
 {
   "token": "",
-  "prefix": "k!"
+  "prefix": "k!",
+  "api": {
+    "user": "https://keyma.sh/api/user/list"
+  }
 }
