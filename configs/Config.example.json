@@ -2,7 +2,7 @@
   "token": "",
   "prefix": "k!",
   "api": {
-    "user": "https://keyma.sh/api/user/list",
+    "user": "https://keyma.sh/api/v1/user/list",
     "tournament": "https://keyma.sh/api/v1/ladders/list"
   }
 }
