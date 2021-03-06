@@ -13,14 +13,14 @@ module.exports = {
         if (args[0] && !args[0].includes('-'))
             return message.channel.send("Improperly formatted username (ie: GNiK-8712)");
 
-        const results = await fetch(`${api.user}?name=${args[0].trim()}&limit=1`).then((response) => response.json());
+        const results = await fetch(`${api.user}?name=${args[0].trim()}&limit=1&view=profile`).then((response) => response.json());
         if (results && results[0]) {
             const userEmbed = new Discord.MessageEmbed()
                 .setColor('#FB923C')
                 .setAuthor((args[0].trim().replace('-', '#')), results[0].userAvatar)
                 .setDescription(results[0].userDescription)
                 .addFields(
-            { name: 'Level', value: (results[0].Level.Index || 1)},
+                    { name: 'Level', value: (results[0].Level.Index || 1)},
                     { name: 'Experience', value: results[0].Experience.toLocaleString()},
                     { name: 'Highest WPM', value: `${results[0].maxWPM.toFixed(2)}`},
                     { name: 'Highest EXP', value: `${results[0].maxEXP.toFixed(2)}`},
